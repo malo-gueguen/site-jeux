@@ -1,13 +1,132 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Collection | Étudiant en Informatique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-gray-800">
+                    <span class="text-indigo-600">Game</span>Collection
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-600 hover:text-indigo-600">Accueil</a>
+                    <a href="#" class="text-gray-600 hover:text-indigo-600">Jeux</a>
+                    <a href="#" class="text-gray-600 hover:text-indigo-600">À propos</a>
+                </div>
+                <button class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                Ma Collection de <span class="text-indigo-600">Jeux</span>
+            </h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Projet étudiant en informatique présentant trois jeux codés from scratch.
+            </p>
+        </div>
+    </section>
+
+    <!-- Games Grid -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+                Mes Créations
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Clicker Game -->
+                <div class="game-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-r from-blue-50 to-blue-100 flex items-center justify-center">
+                        <i class="fas fa-mouse-pointer text-6xl text-blue-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                                <i class="fas fa-mouse-pointer text-blue-500 text-sm"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Clicker Game</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Un jeu simple mais addictif où chaque clic compte. Combien de points pouvez-vous accumuler?
+                        </p>
+                        <a href="src/pages/clicker.html" class="inline-flex items-center text-indigo-600 hover:text-indigo-800">
+                            Jouer maintenant
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mastermind -->
+                <div class="game-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-r from-purple-50 to-purple-100 flex items-center justify-center">
+                        <i class="fas fa-brain text-6xl text-purple-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mr-3">
+                                <i class="fas fa-puzzle-piece text-purple-500 text-sm"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Mastermind</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Testez vos capacités de déduction avec ce classique jeu de stratégie et de logique.
+                        </p>
+                        <a href="src/pages/mastermind.html" class="inline-flex items-center text-indigo-600 hover:text-indigo-800">
+                            Jouer maintenant
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Démineur -->
+                <div class="game-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-r from-red-50 to-red-100 flex items-center justify-center">
+                        <i class="fas fa-bomb text-6xl text-red-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mr-3">
+                                <i class="fas fa-flag text-red-500 text-sm"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Démineur</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Le célèbre jeu de stratégie où vous devez éviter les mines cachées. Saurez-vous survivre?
+                        </p>
+                        <a href="src/pages/demineur.html" class="inline-flex items-center text-indigo-600 hover:text-indigo-800">
+                            Jouer maintenant
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+   
+</body>
 </html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Démineur</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    .cell {
+      width: 40px;
+      height: 40px;
+      transition: all 0.2s ease;
+      aspect-ratio: 1;
+    }
+    .cell:hover:not(.revealed):not(.flagged) {
+      transform: scale(1.05);
+    }
+    .flagged::after {
+      content: "🚩";
+    }
+    .bomb::after {
+      content: "💣";
+    }
+    #board {
+      overflow-x: auto;
+      max-width: 100%;
+      padding: 0.5rem;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-4">
+  <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-6xl">
+    <h1 class="text-3xl font-bold text-center mb-6">Démineur</h1>
+
+    <div class="flex justify-between items-center mb-4">
+      <div class="text-xl">Mines: <span id="mines-count">10</span></div>
+      <div class="text-xl">Temps: <span id="timer">0</span></div>
+      <button id="reset-btn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">😊</button>
+    </div>
+
+    <div class="flex gap-2 mb-6 justify-center">
+      <button id="easy-btn" class="bg-green-500 hover:bg-green-600 text-white px-4 py-1 rounded">Facile</button>
+      <button id="medium-btn" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-1 rounded">Moyen</button>
+      <button id="hard-btn" class="bg-red-500 hover:bg-red-600 text-white px-4 py-1 rounded">Difficile</button>
+    </div>
+
+    <div id="board" class="grid gap-1 justify-start mx-auto">
+      <!-- Grille générée par JS -->
+    </div>
+
+    <div id="message" class="text-center mt-4 text-xl font-bold hidden"></div>
+  </div>
+
+  <script src="../scripts/script_demineur.js"></script>
+</body>
+</html>
