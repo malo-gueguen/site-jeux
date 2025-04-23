@@ -2,7 +2,7 @@
     const config = {
       easy: { rows: 9, cols: 9, mines: 10 },
       medium: { rows: 16, cols: 16, mines: 40 },
-      hard: { rows: 16, cols: 30, mines: 99 }
+      hard: { rows: 16, cols: 28, mines: 90 }
     };
 
     let gameState = {
@@ -87,7 +87,7 @@
     function renderBoard() {
       const { rows, cols } = config[gameState.difficulty];
 
-      boardElement.className = `grid gap-1 justify-start mx-auto`;
+      boardElement.className = `grid gap-1  justify-start mx-auto`;
       boardElement.style.gridTemplateColumns = `repeat(${cols}, 40px)`;
       boardElement.innerHTML = '';
 
@@ -96,22 +96,33 @@
           const cell = document.createElement('div');
           const cellData = gameState.board[row][col];
 
-          cell.className = `cell flex items-center justify-center text-lg font-bold cursor-pointer rounded`;
+          cell.className = `cell flex items-center justify-center text-lg font-bold cursor-pointer rounded text-white`;
 
           if (cellData.revealed) {
             if (cellData.isMine) {
               cell.classList.add('bg-red-500', 'bomb');
             } else {
-              cell.classList.add('bg-gray-200');
+              cell.classList.add('bg-gray-700');
+
               if (cellData.adjacentMines > 0) {
                 cell.textContent = cellData.adjacentMines;
-                const colors = ['', 'text-blue-600', 'text-green-600', 'text-red-600', 'text-purple-800',
-                  'text-yellow-600', 'text-teal-600', 'text-black', 'text-gray-600'];
+                const colors = [
+                  '',
+                  'text-blue-400',
+                  'text-green-400',
+                  'text-red-400',
+                  'text-purple-400',
+                  'text-yellow-400',
+                  'text-teal-400',
+                  'text-pink-400',
+                  'text-gray-400'
+                ];
+                
                 cell.classList.add(colors[cellData.adjacentMines]);
               }
             }
           } else {
-            cell.classList.add('bg-blue-500', 'hover:bg-blue-600');
+            cell.classList.add('bg-green-600', 'hover:bg-green-700');
             if (cellData.flagged) {
               cell.classList.add('flagged');
             }
@@ -144,7 +155,7 @@
         revealAllMines();
         gameState.gameOver = true;
         resetBtn.textContent = '😵';
-        showMessage('Game Over!', 'text-red-600');
+        showMessage('Game Over!', 'text-red-400');
         clearInterval(gameState.timerInterval);
       } else {
         revealCell(row, col);
@@ -152,7 +163,7 @@
         if (gameState.revealed === rows * cols - gameState.mines) {
           gameState.gameWon = true;
           resetBtn.textContent = '😎';
-          showMessage('Gagné!', 'text-green-600');
+          showMessage('Gagné!', 'text-green-400');
           clearInterval(gameState.timerInterval);
         }
       }

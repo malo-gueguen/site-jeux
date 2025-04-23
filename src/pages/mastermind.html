@@ -19,31 +19,31 @@
         }
     </style>
 </head>
-<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-4">
-    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h1 class="text-3xl font-bold text-center mb-6">Mastermind</h1>
+<body class="bg-gray-900 min-h-screen flex flex-col items-center justify-center p-4">
+    <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md border border-gray-700">
+        <h1 class="text-3xl font-bold text-center mb-6 text-green-600">Mastermind</h1>
         
         <div class="flex justify-between items-center mb-6">
-            <div class="text-xl">
-                Tentative: <span id="attempt">1</span>/10
+            <div class="text-xl text-gray-300">
+                Tentative: <span id="attempt" class="text-white">1</span>/10
             </div>
-            <button id="new-game-btn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+            <button id="new-game-btn" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
                 Nouvelle partie
             </button>
         </div>
         
         <div class="mb-6">
-            <h2 class="text-xl font-semibold mb-2">Couleurs disponibles:</h2>
-            <div id="color-palette" class="flex gap-2 mb-4 p-2 bg-gray-100 rounded">
+            <h2 class="text-xl font-semibold mb-2 text-gray-300">Couleurs disponibles:</h2>
+            <div id="color-palette" class="flex gap-2 mb-4 p-2 bg-gray-700 rounded">
                 <!-- Les couleurs seront ajoutées ici dynamiquement -->
             </div>
             
-            <div class="flex items-center gap-2 mb-2">
+            <div class="flex items-center gap-2 mb-2 text-gray-300">
                 <span>Sélection: </span>
                 <div id="current-selection" class="flex gap-1">
                     <!-- La sélection actuelle sera affichée ici -->
                 </div>
-                <button id="submit-guess" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded ml-auto">
+                <button id="submit-guess" class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded ml-auto">
                     Valider
                 </button>
             </div>
@@ -53,7 +53,7 @@
             <!-- Les tentatives seront ajoutées ici dynamiquement -->
         </div>
         
-        <div id="result-message" class="text-center text-xl font-bold hidden"></div>
+        <div id="result-message" class="text-center text-xl font-bold hidden text-green-400"></div>
     </div>
 
     <script src="../scripts/script_mastermind.js">

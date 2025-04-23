@@ -65,22 +65,23 @@ function renderUpgrades() {
         const canAfford = gameState.points >= cost;
         
         const upgradeElement = document.createElement('div');
-        upgradeElement.className = 'bg-gray-50 p-4 rounded-lg border border-gray-200';
+        upgradeElement.className = 'bg-gray-700 p-4 rounded-lg border border-gray-600';
         upgradeElement.innerHTML = `
             <div class="flex justify-between items-center">
-                <div>
-                    <h3 class="font-medium">${upgrade.name}</h3>
-                    <p class="text-sm text-gray-600">${upgrade.description}</p>
-                    <p class="text-xs text-gray-500">Possédé: ${upgrade.owned}</p>
-                </div>
-                <button 
-                    data-id="${upgrade.id}" 
-                    class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded transition ${!canAfford ? 'opacity-50 cursor-not-allowed' : ''}"
-                    ${!canAfford ? 'disabled' : ''}
-                >
-                    Acheter (${cost})
-                </button>
-            </div>
+                        <div>
+                            <h3 class="font-medium text-gray-300">${upgrade.name}</h3>
+                            <p class="text-sm text-gray-400">${upgrade.description}</p>
+                            <p class="text-xs text-gray-500">Possédé: ${upgrade.owned}</p>
+                        </div>
+                        <button 
+                            data-id="${upgrade.id}" 
+                            class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition ${!canAfford ? 'opacity-50 cursor-not-allowed' : ''}"
+                            ${!canAfford ? 'disabled' : ''}
+                        >
+                            Acheter (${cost})
+                        </button>
+                    </div>
+                
         `;
         
         // Ajout de l'event listener directement sur le bouton

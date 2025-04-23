@@ -80,7 +80,7 @@ function updateCurrentSelection() {
     // Ajouter des cases vides si nécessaire
     for (let i = gameState.currentGuess.length; i < CODE_LENGTH; i++) {
         const emptyPeg = document.createElement('div');
-        emptyPeg.className = 'w-6 h-6 rounded-full border-2 border-gray-300';
+        emptyPeg.className = 'w-6 h-6 rounded-full border-2 border-gray-600';
         currentSelectionElement.appendChild(emptyPeg);
     }
 }
@@ -158,11 +158,11 @@ function renderAttempts() {
     
     gameState.attempts.forEach((attempt, attemptIndex) => {
         const attemptElement = document.createElement('div');
-        attemptElement.className = 'flex items-center gap-2 p-2 bg-gray-50 rounded';
+        attemptElement.className = 'flex items-center gap-2 p-2 bg-gray-700 rounded';
         
         // Numéro de tentative
         const attemptNumber = document.createElement('div');
-        attemptNumber.className = 'w-6 text-center font-bold';
+        attemptNumber.className = 'w-6 text-center font-bold text-gray-300';
         attemptNumber.textContent = attemptIndex + 1;
         attemptElement.appendChild(attemptNumber);
         
@@ -207,10 +207,10 @@ function endGame(isWin) {
     
     if (isWin) {
         resultMessageElement.textContent = `Bravo! Vous avez trouvé en ${gameState.currentAttempt} tentatives!`;
-        resultMessageElement.className = 'text-center text-xl font-bold text-green-600';
+        resultMessageElement.className = 'text-center text-xl font-bold text-green-400';
     } else {
         resultMessageElement.textContent = 'Dommage! Le code était:';
-        resultMessageElement.className = 'text-center text-xl font-bold text-red-600';
+        resultMessageElement.className = 'text-center text-xl font-bold text-green-400';
         
         // Afficher le code secret
         const secretCodeElement = document.createElement('div');

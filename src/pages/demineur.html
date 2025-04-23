@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Démineur</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  
+
   <style>
     .cell {
       width: 40px;
@@ -24,19 +24,19 @@
     }
     #board {
       overflow-x: auto;
-      max-width: 100%;
       padding: 0.5rem;
+      justify-content: center;
     }
   </style>
 </head>
-<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-4">
-  <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-6xl">
-    <h1 class="text-3xl font-bold text-center mb-6">Démineur</h1>
+<body class="bg-gray-900 min-h-screen flex flex-col items-center justify-center p-4 text-gray-300">
+  <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-7xl border border-gray-700">
+    <h1 class="text-3xl font-bold text-center mb-6 text-white">Démineur</h1>
 
-    <div class="flex justify-between items-center mb-4">
+    <div class="flex justify-between items-center mb-4 text-green-400">
       <div class="text-xl">Mines: <span id="mines-count">10</span></div>
       <div class="text-xl">Temps: <span id="timer">0</span></div>
-      <button id="reset-btn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">😊</button>
+      <button id="reset-btn" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">😊</button>
     </div>
 
     <div class="flex gap-2 mb-6 justify-center">
@@ -45,11 +45,12 @@
       <button id="hard-btn" class="bg-red-500 hover:bg-red-600 text-white px-4 py-1 rounded">Difficile</button>
     </div>
 
-    <div id="board" class="grid gap-1 justify-start mx-auto">
-      <!-- Grille générée par JS -->
-    </div>
+    <div id="board" class="">
+        
+        <!-- Grille générée par JS -->
+      </div>      
 
-    <div id="message" class="text-center mt-4 text-xl font-bold hidden"></div>
+    <div id="message" class="text-center mt-4 text-xl font-bold hidden text-green-400"></div>
   </div>
 
   <script src="../scripts/script_demineur.js"></script>
